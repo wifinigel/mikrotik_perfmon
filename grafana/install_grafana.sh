@@ -77,10 +77,10 @@ sudo apt-get install -y adduser libfontconfig1
 ARCH=$(dpkg --print-architecture)
 
 echo "* Downloading Grafana." | tee -a $INSTALL_LOG
-wget https://dl.grafana.com/oss/release/grafana_8.3.3_${ARCH}.deb
+wget https://dl.grafana.com/oss/release/grafana_9.5.5_${ARCH}.deb
 
 echo "* Installing Grafana." | tee -a $INSTALL_LOG
-sudo dpkg -i grafana_8.3.3_${ARCH}.deb
+sudo dpkg -i grafana_9.5.5_${ARCH}.deb
 
 # remove requirement to set default admin pwd & change default user/pwd to wlanpi/wlanpi
 echo "* Customizing Grafana." | tee -a $INSTALL_LOG
@@ -167,9 +167,9 @@ echo "* Adding DB as data source to Grafana..." | tee -a $INSTALL_LOG
 
 echo "* Adding DB name & credentials for data source." | tee -a $INSTALL_LOG
 echo "Script path = $SCRIPT_PATH" | tee -a $INSTALL_LOG
-sudo sed -i "s/password:.*$/password: \"$DB_GRAFANA_PWD\"/" $SCRIPT_PATH/influx_datasource.yaml
-sudo sed -i "s/user:.*$/user: \"$DB_GRAFANA_USER\"/" $SCRIPT_PATH/influx_datasource.yaml
-sudo sed -i "s/database:.*$/database: \"$DB_NAME\"/" $SCRIPT_PATH/influx_datasource.yaml
+sudo sed -i "s/password:.*$/password: $DB_GRAFANA_PWD/" $SCRIPT_PATH/influx_datasource.yaml
+sudo sed -i "s/user:.*$/user: $DB_GRAFANA_USER/" $SCRIPT_PATH/influx_datasource.yaml
+sudo sed -i "s/dbname:.*$/dbname: $DB_NAME/" $SCRIPT_PATH/influx_datasource.yaml
 
 sudo cp $SCRIPT_PATH/influx_datasource.yaml /etc/grafana/provisioning/datasources/
 
@@ -198,7 +198,8 @@ cat << EOF | tee -a $INSTALL_LOG
 * !!! Installation complete. Please review instructions below !!!
 *
 * ================================================
-*  Browse Grafana at: http://${HOSTNAME}:${GRAFANA_PORT}/ (user/pwd=$GRAFANA_USER/$GRAFANA_PWD)
+*  Browse Grafana at: http://${HOSTNAME}:${GRAFANA_PORT}/ 
+*  (user/pwd=$GRAFANA_USER/$GRAFANA_PWD)
 * ================================================
 *
 *  Copy the following files from the folder: "../mikrotik_scripts" to your MikroTik device (e.g. sftp):
