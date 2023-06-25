@@ -46,6 +46,6 @@ If you hit issues you can't fix, you are likely best running the removal script 
 
 As much as I enjoy creating & sharing code, I do not have time to maintain this repo (no PRs please). If you have any improvements, please clone this repo and publish your own version of the code and make it available to others.
 
-Find out more scripting hits & tips at https://MikroTikScripting.com
+Find out more scripting hints & tips at https://MikroTikScripting.com
 
 
