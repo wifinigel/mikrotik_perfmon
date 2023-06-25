@@ -208,10 +208,10 @@ cat << EOF | tee -a $INSTALL_LOG
 *   - interface_stats.rsc
 *   - system_stats.rsc
 *
-*  Add the following scripts to the MikroTik scheduler:
+*  Add scripts to the MikroTik scheduler using the following commands:
 *
-*   interface_stats.rsc (1 min interval)
-*   system_stats.rsc (5 min interval)
+*   /system scheduler add name="Interface Stats" interval=60 on-event="/import interface_stats.rsc"
+*   /system scheduler add name="System Stats" interval=300 on-event="/import system_stats.rsc"
 *
 *  Watch the MikroTok logs for error indications.
 *
