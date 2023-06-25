@@ -1,3 +1,7 @@
+# A script to gather MikroTik system data and send it to InfluxDB/Grafana
+#
+# Visit www.mikrotikscripting.com for more tips/info 
+
 /import influx_exporter.rsc
 
 :global DEBUG false;

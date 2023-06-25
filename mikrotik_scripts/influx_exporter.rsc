@@ -1,4 +1,6 @@
 # A module to post data to influxdb (v1.8 only - does not work with v2.x/v3.x)
+#
+# Visit www.mikrotikscripting.com for more tips/info 
 
 :global PostToInflux do={
 
