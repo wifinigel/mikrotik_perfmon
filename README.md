@@ -12,7 +12,7 @@ This code uses a bash script to install InfluxDB and Grafana on to an Ubuntu or 
 
 I've done my best to ensure that the installer script will run with no issues, but your system may have some version/configuration/oddities that I can't anticipate and may not run error-free, which could leave your system in a state of having partially installed code. Do not run this on a production system and/or if you are not comfortable with being able to recover the situation yourself.
 
-There is also a removal script to uninstall both Grafana and InfluxDB, but the same caveats apply as for the installer script. If you run the installer and it fails for some unknown reason, run the removal script to tidy things up (it *should* remove most packaged added).
+There is also a removal script to uninstall both Grafana and InfluxDB, but the same caveats apply as for the installer script. If you run the installer and it fails for some unknown reason, run the removal script to tidy things up (it *should* remove most packages added).
 
 Bottom line: try this out on a VM/device/system you don't care about.
 
