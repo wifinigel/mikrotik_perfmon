@@ -169,7 +169,7 @@ echo "* Adding DB name & credentials for data source." | tee -a $INSTALL_LOG
 echo "Script path = $SCRIPT_PATH" | tee -a $INSTALL_LOG
 sudo sed -i "s/password:.*$/password: $DB_GRAFANA_PWD/" $SCRIPT_PATH/influx_datasource.yaml
 sudo sed -i "s/user:.*$/user: $DB_GRAFANA_USER/" $SCRIPT_PATH/influx_datasource.yaml
-sudo sed -i "s/dbname:.*$/dbname: $DB_NAME/" $SCRIPT_PATH/influx_datasource.yaml
+sudo sed -i "s/dbName:.*$/dbName: $DB_NAME/" $SCRIPT_PATH/influx_datasource.yaml
 
 sudo cp $SCRIPT_PATH/influx_datasource.yaml /etc/grafana/provisioning/datasources/
 
