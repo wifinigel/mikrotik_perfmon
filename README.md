@@ -8,7 +8,7 @@ This is not production code, but provides a useful demo of visualizing performan
 
 # Instructions
 
-This code uses a bash script to install InfluxDB and Grafana on to an Ubuntu or Raspberry Pi device. I tested this is on Ubuntu 20.04.6 & Bullseye RPi OS, but *suspect* it will run on other versions and maybe other Debian based distributions. It will also perform basic configuration of both software packages. If you're not comfortable with having these packages installed on your Linux device, do not proceed with running the installation script. 
+This code uses a bash script to install InfluxDB and Grafana on to an Ubuntu or Raspberry Pi device. I tested this is on Ubuntu 20.04.6 & Bullseye RPi OS, but *suspect* it will run on other versions and maybe other Debian based distributions. The installer script also performs basic configuration of both software packages and customises the accompanying Mikrotik scripts with required DB credentials & IP address. If you're not comfortable with having these packages installed on your Linux device, do not proceed with running the installation script. 
 
 I've done my best to ensure that the installer script will run with no issues, but your system may have some version/configuration/oddities that I can't anticipate and may not run error-free, which could leave your system in a state of having partially installed code. Do not run this on a production system and/or if you are not comfortable with being able to recover the situation yourself.
 
